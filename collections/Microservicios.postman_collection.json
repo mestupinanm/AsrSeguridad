@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"measurements\",\r\n    \"url\": \"http://35.193.151.156:8080\"\r\n}",
+							"raw": "{\r\n    \"name\":\"documentos\",\r\n    \"url\": \"http://35.193.151.156:8080\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"hosts\": [\"10.128.0.31\", \"0.0.0.0\", \"34.69.159.153\"],\r\n     \"paths\": [\"/measurements\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"261f278b-a35e-4c61-af55-66f8b3aa7406\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.31\", \"0.0.0.0\", \"34.69.159.153\"],\r\n     \"paths\": [\"/documentos\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"261f278b-a35e-4c61-af55-66f8b3aa7406\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,7 +147,7 @@
 			]
 		},
 		{
-			"name": "Measurements",
+			"name": "Documentos",
 			"item": [
 				{
 					"name": "Create Measurement",
@@ -182,7 +182,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Measurements",
+					"name": "Get Documentos",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -199,7 +199,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/measurements/",
+							"raw": "http://35.193.151.156:8080/documentos/",
 							"protocol": "http",
 							"host": [
 								"35",
@@ -209,7 +209,7 @@
 							],
 							"port": "8080",
 							"path": [
-								"measurements",
+								"documentos",
 								""
 							]
 						}
@@ -217,7 +217,7 @@
 					"response": []
 				},
 				{
-					"name": "Create many measurements",
+					"name": "Create many documentos",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -231,7 +231,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/createmeasurements/",
+							"raw": "http://35.193.151.156:8080/createdocumentos/",
 							"protocol": "http",
 							"host": [
 								"35",
@@ -241,7 +241,7 @@
 							],
 							"port": "8080",
 							"path": [
-								"createmeasurements",
+								"createdocumentos",
 								""
 							]
 						}
