@@ -19,7 +19,7 @@ def check_tipo(data):
 def DocumentList(request):
     queryset = Document.objects.all()
     context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
-    return JsonResponse(context, safe=False)
+    return render(request, 'documentos/documentos.html', context)
 
 def DocumentCreate(request):
     if request.method == 'POST':
