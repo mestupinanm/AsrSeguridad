@@ -10,13 +10,13 @@ services:
           - /variables
         strip_path: false
 
-  - name: measurements_service
-    host: measurements_upstream
+  - name: documentos_service
+    host: documentos_upstream
     protocol: http
     routes:
-      - name: measurements
+      - name: documentos
         paths:
-          - /measurements
+          - /documentos
         strip_path: false
     
 upstreams:
@@ -25,7 +25,7 @@ upstreams:
       - target: 10.128.0.84:8080
         weight: 100
 
-  - name: measurements_upstream
+  - name: documentos_upstream
     targets:
       - target: 10.128.0.85:8080
         weight: 100

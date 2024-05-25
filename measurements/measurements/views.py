@@ -1,4 +1,4 @@
-from .models import Measurement
+from .models import Document
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
@@ -16,41 +16,41 @@ def check_variable(data):
             return True
     return False
 
-def MeasurementList(request):
-    queryset = Measurement.objects.all()
+def DocumentList(request):
+    queryset = Document.objects.all()
     context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
     return JsonResponse(context, safe=False)
 
-def MeasurementCreate(request):
+def DocumentCreate(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         data_json = json.loads(data)
         if check_variable(data_json) == True:
-            measurement = Measurement()
-            measurement.variable = data_json['variable']
-            measurement.value = data_json['value']
-            measurement.unit = data_json['unit']
-            measurement.place = data_json['place']
-            measurement.save()
-            return HttpResponse("successfully created measurement")
+            document = Document()
+            document.variable = data_json['variable']
+            document.value = data_json['value']
+            document.unit = data_json['unit']
+            document.place = data_json['place']
+            document.save()
+            return HttpResponse("successfully created document")
         else:
-            return HttpResponse("unsuccessfully created measurement. Variable does not exist")
+            return HttpResponse("unsuccessfully created document. Variable does not exist")
 
-def MeasurementsCreate(request):
+def DocumentsCreate(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         data_json = json.loads(data)
-        measurement_list = []
-        for measurement in data_json:
-                    if check_variable(measurement) == True:
-                        db_measurement = Measurement()
-                        db_measurement.variable = measurement['variable']
-                        db_measurement.value = measurement['value']
-                        db_measurement.unit = measurement['unit']
-                        db_measurement.place = measurement['place']
-                        measurement_list.append(db_measurement)
+        document_list = []
+        for document in data_json:
+                    if check_variable(document) == True:
+                        db_document = Document()
+                        db_document.variable = document['variable']
+                        db_document.value = document['value']
+                        db_document.unit = document['unit']
+                        db_document.place = document['place']
+                        document_list.append(db_document)
                     else:
                         return HttpResponse("unsuccessfully created measurement. Variable does not exist")
         
-        Measurement.objects.bulk_create(measurement_list)
-        return HttpResponse("successfully created measurements")
+        Document.objects.bulk_create(document_list)
+        return HttpResponse("successfully created document")

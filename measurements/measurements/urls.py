@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from . import views
 
 urlpatterns = [
-    url(r'^measurements/', views.MeasurementList),
-    url(r'^measurementcreate/$', csrf_exempt(views.MeasurementCreate), name='measurementCreate'),
-    url(r'^createmeasurements/$', csrf_exempt(views.MeasurementsCreate), name='createMeasurements'),
+    url(r'^documentos/', views.DocumentList),
+    url(r'^documentcreate/$', csrf_exempt(views.DocumentCreate), name='documentCreate'),
+    url(r'^createdocumentos/$', csrf_exempt(views.DocumentCreate), name='createDocumentos'),
 ]
