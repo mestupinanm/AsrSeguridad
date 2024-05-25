@@ -150,7 +150,7 @@
 			"name": "Documentos",
 			"item": [
 				{
-					"name": "Create Measurement",
+					"name": "Create Document",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -164,7 +164,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/measurementcreate/",
+							"raw": "http://35.193.151.156:8080/documentcreate/",
 							"protocol": "http",
 							"host": [
 								"35",
@@ -174,7 +174,7 @@
 							],
 							"port": "8080",
 							"path": [
-								"measurementcreate",
+								"documentcreate",
 								""
 							]
 						}
