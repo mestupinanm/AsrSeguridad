@@ -106,6 +106,7 @@ resources:
           cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
           cd AsrSeguridad
+          git checkout cambios
           docker network create kong-net
           docker run -d --name kong --network=kong-net --restart=always \
           -v "$(pwd):/kong/declarative/" -e "KONG_DATABASE=off" \
@@ -201,7 +202,9 @@ resources:
           sudo mkdir /home/sprint
           cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
-          cd AsrSeguridad/tipos
+          cd AsrSeguridad
+          git checkout cambios
+          cd tipos
 
 - name: msd-documentos-ms
   type: compute.v1.instance
@@ -234,7 +237,9 @@ resources:
           sudo mkdir /home/sprint
           cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
-          cd AsrSeguridad/documentos
+          cd AsrSeguridad
+          git checkout cambios
+          cd documentos
           sudo pip3 install -r requirements.txt
           sudo python3 manage.py makemigrations
           sudo python3 manage.py migrate
