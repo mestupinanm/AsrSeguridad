@@ -75,7 +75,7 @@
 			]
 		},
 		{
-			"name": "Variables",
+			"name": "Tipos",
 			"item": [
 				{
 					"name": "Create Variable",
@@ -110,7 +110,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Variables",
+					"name": "Get Tipos",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -127,7 +127,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.171.66.152:8080/variables/",
+							"raw": "http://34.171.66.152:8080/tipos/",
 							"protocol": "http",
 							"host": [
 								"34",
@@ -137,7 +137,7 @@
 							],
 							"port": "8080",
 							"path": [
-								"variables",
+								"tipos",
 								""
 							]
 						}

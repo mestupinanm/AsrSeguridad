@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'variables',
+    'tipos',
 ]
 
 MIDDLEWARE = [
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'asr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('VARIABLES_DB_NAME', 'variables_db'),
-        'USER': os.environ.get('VARIABLES_DB_USER', 'variables_user'),
-        'PASSWORD': os.environ.get('VARIABLES_DB_PASSWORD', 'isis2503'),
-        'HOST': os.environ.get('VARIABLES_DB_HOST', 'localhost'),
+        'NAME': os.environ.get('TIPOS_DB_NAME', 'tipos_db'),
+        'USER': os.environ.get('TIPOS_DB_USER', 'tipos_user'),
+        'PASSWORD': os.environ.get('TIPOS_DB_PASSWORD', 'isis2503'),
+        'HOST': os.environ.get('TIPOS_DB_HOST', 'localhost'),
         'PORT': '5432',
     }
 }

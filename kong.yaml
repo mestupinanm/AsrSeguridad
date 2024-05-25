@@ -1,13 +1,13 @@
 _format_version: "2.1"
 
 services:
-  - name: variables_service
-    host: variables_upstream
+  - name: tipos_service
+    host: tipos_upstream
     protocol: http
     routes:
-      - name: variables
+      - name: tipos
         paths:
-          - /variables
+          - /tipos
         strip_path: false
 
   - name: documentos_service
@@ -20,7 +20,7 @@ services:
         strip_path: false
     
 upstreams:
-  - name: variables_upstream
+  - name: tipos_upstream
     targets:
       - target: 10.128.0.84:8080
         weight: 100

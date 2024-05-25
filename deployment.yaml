@@ -11,9 +11,9 @@
 #    - msd-service-db
 # 2. Instancias MVs:
 #    - msd-kong-instance
-#    - msd-variables-db (postgreSQL instalado y configurado)
+#    - msd-tipos-db (postgreSQL instalado y configurado)
 #    - msd-documentos-db (postgreSQL instalado y configurado)
-#    - msd-variables-ms (Servicio de variables descargado)
+#    - msd-tipos-ms (Servicio de tipos descargado)
 #    - msd-documentos-ms (Servicio de documentos instalado y configurado)
 
 resources:
@@ -113,7 +113,7 @@ resources:
           -p 8000:8000 kong/kong-gateway
 
 # Database instances
-- name: msd-variables-db
+- name: msd-tipos-db
   type: compute.v1.instance
   properties:
     zone: us-central1-a
@@ -139,7 +139,7 @@ resources:
       - key: startup-script
         value: |
           #!/bin/bash
-          docker run --restart=always -d -e POSTGRES_USER=variables_user -e POSTGRES_DB=variables_db -e POSTGRES_PASSWORD=isis2503 -p 5432:5432 --name variables-db postgres
+          docker run --restart=always -d -e POSTGRES_USER=tipos_user -e POSTGRES_DB=tipos_db -e POSTGRES_PASSWORD=isis2503 -p 5432:5432 --name tipos-db postgres
 
 - name: msd-documentos-db
   type: compute.v1.instance
@@ -171,7 +171,7 @@ resources:
 
 
 # Service instances
-- name: msd-variables-ms
+- name: msd-tipos-ms
   type: compute.v1.instance
   properties:
     zone: us-central1-a
@@ -200,7 +200,7 @@ resources:
           sudo mkdir /home/labs
           cd /home/labs
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
-          cd AsrSeguridad/variables
+          cd AsrSeguridad/tipos
 
 - name: msd-documentos-ms
   type: compute.v1.instance

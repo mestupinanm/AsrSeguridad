@@ -133,4 +133,4 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-PATH_VAR = "http://" + os.environ.get("VARIABLES_HOST", "10.128.0.84") + ":" + os.environ.get("VARIABLES_PORT", "8080") + "/variables"
+PATH_VAR = "http://" + os.environ.get("TIPOS_HOST", "10.128.0.84") + ":" + os.environ.get("TIPOS_PORT", "8080") + "/tipos"
