@@ -25,7 +25,7 @@ def DocumentCreate(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         data_json = json.loads(data)
-        if check_variable(data_json) == True:
+        if check_tipo(data_json) == True:
             document = Document()
             document.variable = data_json['variable']
             document.value = data_json['value']
@@ -42,7 +42,7 @@ def DocumentsCreate(request):
         data_json = json.loads(data)
         document_list = []
         for document in data_json:
-                    if check_variable(document) == True:
+                    if check_tipo(document) == True:
                         db_document = Document()
                         db_document.variable = document['variable']
                         db_document.value = document['value']
