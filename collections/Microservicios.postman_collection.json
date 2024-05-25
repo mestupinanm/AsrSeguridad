@@ -78,7 +78,7 @@
 			"name": "Tipos",
 			"item": [
 				{
-					"name": "Create Variable",
+					"name": "Create Tipo",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -92,7 +92,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.171.66.152:8080/variablecreate/",
+							"raw": "http://34.171.66.152:8080/tipocreate/",
 							"protocol": "http",
 							"host": [
 								"34",
@@ -102,7 +102,7 @@
 							],
 							"port": "8080",
 							"path": [
-								"variablecreate",
+								"tipocreate",
 								""
 							]
 						}
@@ -156,7 +156,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 25,\r\n    \"unit\": \"C\",\r\n    \"place\": \"ML\"\r\n}",
+							"raw": "{\r\n    \"tipo\": 1,\r\n    \"value\": 25,\r\n    \"unit\": \"C\",\r\n    \"place\": \"ML\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -191,7 +191,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"variable\": 1,\r\n    \"value\": 24,\r\n    \"unit\": \"C\",\r\n    \"place\": \"ML\"\r\n}",
+							"raw": "{\r\n    \"tipo\": 1,\r\n    \"value\": 24,\r\n    \"unit\": \"C\",\r\n    \"place\": \"ML\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -223,7 +223,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n    {\r\n        \"variable\": 1,\r\n        \"unit\": \"C\",\r\n        \"value\": 68.56,\r\n        \"place\": \"RGD-1\"\r\n    },\r\n    {\r\n        \"variable\": 1,\r\n        \"unit\": \"C\",\r\n        \"value\": 68.56,\r\n        \"place\": \"RGD-1\"\r\n    }\r\n]",
+							"raw": "[\r\n    {\r\n        \"tipo\": 1,\r\n        \"unit\": \"C\",\r\n        \"value\": 68.56,\r\n        \"place\": \"RGD-1\"\r\n    },\r\n    {\r\n        \"tipo\": 1,\r\n        \"unit\": \"C\",\r\n        \"value\": 68.56,\r\n        \"place\": \"RGD-1\"\r\n    }\r\n]",
 							"options": {
 								"raw": {
 									"language": "json"
