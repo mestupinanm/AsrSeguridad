@@ -102,8 +102,8 @@ resources:
       - key: startup-script
         value: |
           #!/bin/bash
-          sudo mkdir /home/labs
-          cd /home/labs
+          sudo mkdir /home/sprint
+          cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
           cd AsrSeguridad
           docker network create kong-net
@@ -197,8 +197,8 @@ resources:
       - key: startup-script
         value: |
           #!/bin/bash
-          sudo mkdir /home/labs
-          cd /home/labs
+          sudo mkdir /home/sprint
+          cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
           cd AsrSeguridad/tipos
 
@@ -230,8 +230,8 @@ resources:
           #!/bin/bash
           sudo apt-get update
           sudo apt install python3-pip -y
-          sudo mkdir /home/labs
-          cd /home/labs
+          sudo mkdir /home/sprint
+          cd /home/sprint
           sudo git clone https://github.com/mestupinanm/AsrSeguridad.git
           cd AsrSeguridad/documentos
           sudo pip3 install -r requirements.txt
