@@ -12,7 +12,7 @@ def check_tipo(data):
     r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
     tipos = r.json()
     for tipo in tipos:
-        if data["variable"] == tipo["id"]:
+        if data["tipo"] == tipo["id"]:
             return True
     return False
 
