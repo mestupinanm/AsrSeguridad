@@ -170,6 +170,7 @@ resources:
           docker run --restart=always -d -e POSTGRES_USER=documentos_user -e POSTGRES_DB=documentos_db -e POSTGRES_PASSWORD=isis2503 -p 5432:5432 --name documentos-db postgres
 
 
+
 # Service instances
 - name: msd-tipos-ms
   type: compute.v1.instance
