@@ -8,7 +8,7 @@ from django.conf import settings
 import requests
 import json
 
-def check_variable(data):
+def check_tipo(data):
     r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
     tipos = r.json()
     for variable in tipos:
