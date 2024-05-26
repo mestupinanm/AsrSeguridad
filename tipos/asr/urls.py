@@ -18,12 +18,11 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from. import documentos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('', include('documentos.urls')),
-    
 ]
 
 if settings.DEBUG is True:
