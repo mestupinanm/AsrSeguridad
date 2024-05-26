@@ -8,10 +8,7 @@ import json
 
  # Assuming you have a model called Tipo
 
-def TipoList(request):
-    tipos = Tipo.objects.all()
-    context = {'tipos_list': tipos}  # Make it a dictionary
-    return render(request, 'tipos/tipos_list.html', context)
+
 
 
 
