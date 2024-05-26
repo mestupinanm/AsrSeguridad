@@ -21,7 +21,7 @@ def DocumentList(request):
     
     queryset = Document.objects.all()
     context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
-    return render(request, 'documentos/documentos.html', context)
+    return JsonResponse(context, safe=False)
     
     
 
