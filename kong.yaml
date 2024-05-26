@@ -20,11 +20,6 @@ services:
         strip_path: false
     
 upstreams:
-  - name: tipos_upstream
-    targets:
-      - target: 10.128.0.84:8080
-        weight: 100
-
   - name: documentos_upstream
     targets:
       - target: 10.128.0.85:8080
