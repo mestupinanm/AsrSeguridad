@@ -5,6 +5,6 @@ from django.views.decorators.csrf import csrf_exempt
 from . import views
 
 urlpatterns = [
-    url(r'^tipos/', views.TipoList, name='tipoList'),
-    url(r'^tipocreate/$', csrf_exempt(views.TipoCreate), name='tipoCreate'),
+    url('tipos/', views.TipoList, name='tipoList'),
+    url('tipocreate/', csrf_exempt(views.TipoCreate), name='tipoCreate'),
 ]
