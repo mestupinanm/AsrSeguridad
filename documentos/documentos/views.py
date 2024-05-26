@@ -7,6 +7,8 @@ from django.urls import reverse
 from django.conf import settings
 import requests
 import json
+from .forms import documentForm
+from .logic.logic_document import create_documents, get_documents
 
 def check_tipo(data):
     r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
@@ -17,9 +19,11 @@ def check_tipo(data):
     return False
 
 def DocumentList(request):
-    queryset = Document.objects.all()
-    context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
-    return JsonResponse(context, safe=False)
+    documents = get_documents()
+    context = {
+        'document_list': documents
+    }
+    return render(request, 'documentos/document_list.html', context)
 
 def DocumentCreate(request):
     if request.method == 'POST':
@@ -54,3 +58,20 @@ def DocumentsCreate(request):
         
         Document.objects.bulk_create(document_list)
         return HttpResponse("successfully created document")
+    
+def documentUpload(request):
+    if request.method == 'POST':
+        form = documentForm(request.POST, request.FILES)  # Include request.FILES for handling file data
+        if form.is_valid():
+            create_documents(form)
+            messages.add_message(request, messages.SUCCESS, 'Document uploaded successfully.')
+            return HttpResponseRedirect(reverse('documentUpload'))  # Ensure this redirects to the correct URL
+        else:
+            print(form.errors)  # Good for debugging; consider showing these errors on the page too
+    else:
+        form = documentForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'documentos/documentUpload.html', context)

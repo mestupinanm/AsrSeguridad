@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^documentos/', views.DocumentList),
     url(r'^documentcreate/$', csrf_exempt(views.DocumentCreate), name='documentCreate'),
     url(r'^createdocumentos/$', csrf_exempt(views.DocumentCreate), name='createDocumentos'),
+    path('documentupload/', csrf_exempt(views.documentUpload), name='documentUpload'),
 ]
