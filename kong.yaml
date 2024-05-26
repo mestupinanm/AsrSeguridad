@@ -7,7 +7,7 @@ services:
     routes:
       - name: documentos-root
         paths:
-          - /  # Apuntar la raíz al servicio de documentos
+          - /documentos  # Apuntar la raíz al servicio de documentos
         strip_path: false
 
   - name: tipos_service
@@ -16,7 +16,7 @@ services:
     routes:
       - name: tipos
         paths:
-          - /tipos
+          - /
         strip_path: false
     
 upstreams:
