@@ -7,5 +7,5 @@ from . import views
 urlpatterns = [
     url('^documentos/', views.DocumentList),
     path('documentupload/', csrf_exempt(views.documentUpload), name='documentUpload'),
-    url('tipos/', views.tipoListV2, name='tipoList'),
+    url('tipitos/', views.tipoListV2, name='tipoList'),
 ]
