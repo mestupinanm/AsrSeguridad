@@ -7,7 +7,7 @@ services:
     routes:
       - name: tipos
         paths:
-          - /tipos
+          - /
         strip_path: false
 
   - name: documentos_service
@@ -16,7 +16,7 @@ services:
     routes:
       - name: documentos
         paths:
-          - /documentos
+          - /
         strip_path: false
     
 upstreams:
