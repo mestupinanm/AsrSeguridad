@@ -9,3 +9,4 @@ urlpatterns = [
     path('documentupload/', csrf_exempt(views.documentUpload), name='documentUpload'),
     url('^manejador/', views.manejador),
 ]
+
