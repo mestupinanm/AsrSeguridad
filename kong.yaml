@@ -5,28 +5,20 @@ services:
     host: tipos_upstream
     protocol: http
     routes:
-      - name: tipos-root
-        paths:
-          - /  # Captura la raíz para el servicio de tipos
-        strip_path: false
       - name: tipos
         paths:
-          - /tipos
+          - /
         strip_path: false
 
   - name: documentos_service
     host: documentos_upstream
     protocol: http
     routes:
-      - name: documentos-root
-        paths:
-          - /  # Captura la raíz para el servicio de documentos
-        strip_path: false
       - name: documentos
         paths:
-          - /documentos
+          - /
         strip_path: false
-
+    
 upstreams:
   - name: tipos_upstream
     targets:
