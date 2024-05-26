@@ -9,7 +9,7 @@ import json
 def TipoList(request):
     queryset = Tipo.objects.all()
     context = list(queryset.values('id', 'name'))
-    return JsonResponse(context, safe=False)
+    return render(request, 'tipos/tipos_list.html', context)
 
 def TipoCreate(request):
     if request.method == 'POST':
