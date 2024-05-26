@@ -1,7 +1,7 @@
-from ..models import document
+from ..models import Document
 
 def get_documents():
-    queryset = document.objects.all()
+    queryset = Document.objects.all()
     return (queryset)
 
 def create_documents(form):
