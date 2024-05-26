@@ -6,10 +6,13 @@ from django.urls import reverse
 from django.http import JsonResponse
 import json
 
+ # Assuming you have a model called Tipo
+
 def TipoList(request):
-    queryset = Tipo.objects.all()
-    context = list(queryset.values('id', 'name'))
+    tipos = Tipo.objects.all()
+    context = {'tipos_list': tipos}  # Make it a dictionary
     return render(request, 'tipos/tipos_list.html', context)
+
 
 def TipoCreate(request):
     if request.method == 'POST':
