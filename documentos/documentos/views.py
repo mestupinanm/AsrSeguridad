@@ -7,8 +7,7 @@ from django.urls import reverse
 from django.conf import settings
 import requests
 import json
-from asr.auth0backend import getRole
-from django.contrib.auth.decorators import login_required
+
 
 def check_tipo(data):
     r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
@@ -18,17 +17,14 @@ def check_tipo(data):
             return True
     return False
 
-@login_required
 def DocumentList(request):
-    role = getRole(request)
-    if role == "Gerencia Campus":
-        queryset = Document.objects.all()
-        context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
-        return render(request, 'documentos/documentos.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
     
-@login_required    
+    queryset = Document.objects.all()
+    context = list(queryset.values('id', 'variable', 'value', 'unit', 'place', 'dateTime'))
+    return render(request, 'documentos/documentos.html', context)
+    
+    
+
 def DocumentCreate(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
