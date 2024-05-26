@@ -44,5 +44,5 @@ def documentUpload(request):
     }
     return render(request, 'documentos/documentUpload.html', context)
 
-def tipoListV2(request):
+def manejador(request):
     return render(request, 'documentos/tipos_list.html')
