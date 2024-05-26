@@ -1,10 +1,11 @@
 from django.urls import path
+from django.conf.urls import url, include
 from django.views.decorators.csrf import csrf_exempt
 
 from . import views
 
 urlpatterns = [
-    path('documentos/', views.DocumentList, name='documentList'),
+    url('^documentos/', views.DocumentList),
     path('documentupload/', csrf_exempt(views.documentUpload), name='documentUpload'),
-    path('manejador/', views.manejador, name='manejador'),
+    
 ]
