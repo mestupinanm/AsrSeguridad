@@ -13,8 +13,6 @@ def TipoList(request):
     context = {'tipos_list': tipos}  # Make it a dictionary
     return render(request, 'tipos/tipos_list.html', context)
 
-def tipoListV2(request):
-    return render(request, 'tipos/tipos_list.html')
 
 
 def TipoCreate(request):

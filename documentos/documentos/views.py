@@ -43,3 +43,6 @@ def documentUpload(request):
         'form': form,
     }
     return render(request, 'documentos/documentUpload.html', context)
+
+def tipoListV2(request):
+    return render(request, 'documentos/tipos_list.html')
