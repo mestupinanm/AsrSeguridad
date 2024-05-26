@@ -1,22 +1,22 @@
 _format_version: "2.1"
 
 services:
+  - name: documentos_service
+    host: documentos_upstream
+    protocol: http
+    routes:
+      - name: documentos-root
+        paths:
+          - /  # Apuntar la raíz al servicio de documentos
+        strip_path: false
+
   - name: tipos_service
     host: tipos_upstream
     protocol: http
     routes:
       - name: tipos
         paths:
-          - /
-        strip_path: false
-
-  - name: documentos_service
-    host: documentos_upstream
-    protocol: http
-    routes:
-      - name: documentos
-        paths:
-          - /
+          - /tipos
         strip_path: false
     
 upstreams:
