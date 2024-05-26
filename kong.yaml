@@ -9,6 +9,14 @@ services:
         paths:
           - /documentos  # Apuntar la raíz al servicio de documentos
         strip_path: false
+      - name: document-upload
+        paths:
+          - /documentupload
+        strip_path: false
+      - name: document-manager
+        paths:
+          - /manejador
+        strip_path: false
 
   - name: tipos_service
     host: tipos_upstream
